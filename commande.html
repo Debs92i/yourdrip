@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script>
+(function(){
+  var t = localStorage.getItem('yourdrip-theme');
+  if(!t){ var h = new Date().getHours(); t = (h >= 7 && h < 19) ? 'light' : 'dark'; }
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commander — YourDrip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="YourDrip — Accueil">
+      <span class="logo-hanger" aria-hidden="true">⌂</span>
+      YourDrip
+    </a>
+    <div class="nav-right">
+    <nav class="nav-links" id="navLinks">
+      <a href="catalogue.html">Catalogue</a>
+      <a href="produit.html">Personnaliser</a>
+      <a href="index.html#comment-ca-marche">Comment ça marche</a>
+      <a href="commande.html" class="nav-cta active-link">Commander</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème" aria-pressed="false">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"></line><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"></line><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"></line></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.354 15.354A9 9 0 0 1 8.646 3.646 9.003 9.003 0 1 0 20.354 15.354z"></path></svg>
+    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-head">
+    <p class="eyebrow">Étape 2 sur 2</p>
+    <h1>Finalise ta commande</h1>
+    <p class="page-sub">On a besoin de tes coordonnées pour te livrer et te tenir au courant de l'avancée.</p>
+  </section>
+
+  <section class="order-page" id="orderPage">
+
+    <aside class="order-recap">
+      <h2>Récapitulatif</h2>
+      <dl class="recap-list">
+        <div><dt>Vêtement</dt><dd>T-shirt Essentiel</dd></div>
+        <div><dt>Couleur</dt><dd>Noir violine</dd></div>
+        <div><dt>Taille</dt><dd>M</dd></div>
+        <div><dt>Personnalisation</dt><dd>Image importée par le client</dd></div>
+      </dl>
+      <div class="recap-total">
+        <div><span>Total estimé</span><strong>8 000 F</strong></div>
+        <div class="recap-advance"><span>Avance à la validation (50%)</span><strong>4 000 F</strong></div>
+      </div>
+      <p class="recap-payment-method">Via <span id="recapPaymentMethod">Orange Money</span></p>
+      <p class="recap-note">Le montant final est confirmé après conception de la maquette. Aucun paiement n'est demandé avant ta validation.</p>
+    </aside>
+
+    <form class="order-form" id="orderForm">
+
+      <div class="form-grid">
+        <div class="field-group">
+          <label class="field-label" for="prenom">Prénom</label>
+          <input type="text" id="prenom" name="prenom" required>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" required>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="adresse">Adresse de livraison</label>
+        <input type="text" id="adresse" name="adresse" placeholder="Rue, ville, région" required>
+      </div>
+
+      <div class="form-grid">
+        <div class="field-group">
+          <label class="field-label" for="email">Adresse email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="telephone">Numéro de téléphone</label>
+          <input type="tel" id="telephone" name="telephone" required>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="description">Description de la commande &amp; instructions spécifiques</label>
+        <textarea id="description" name="description" rows="4" placeholder="Précise l'emplacement du visuel, les couleurs souhaitées, toute contrainte particulière..."></textarea>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Mode de paiement de l'avance (50%)</label>
+        <div class="payment-methods" id="paymentMethods">
+          <label class="payment-card">
+            <input type="radio" name="paiement" value="orange" checked>
+            <span class="payment-icon payment-icon--om" aria-hidden="true">OM</span>
+            <span class="payment-info">
+              <span class="payment-name">Orange Money</span>
+              <span class="payment-desc">Code USSD ou appli Orange</span>
+            </span>
+          </label>
+          <label class="payment-card">
+            <input type="radio" name="paiement" value="wave">
+            <span class="payment-icon payment-icon--wave" aria-hidden="true">W</span>
+            <span class="payment-info">
+              <span class="payment-name">Wave</span>
+              <span class="payment-desc">Paiement instantané par QR</span>
+            </span>
+          </label>
+        </div>
+        <div class="payment-phone">
+          <label class="field-label" for="paiementTel">Numéro Mobile Money</label>
+          <input type="tel" id="paiementTel" name="paiementTel" placeholder="77 123 45 67">
+        </div>
+        <p class="tab-note">Rien n'est débité maintenant. Tu recevras la demande de paiement de l'avance dès que ta maquette sera validée.</p>
+      </div>
+
+      <label class="checkbox-row">
+        <input type="checkbox" required>
+        J'accepte qu'aucune production ne démarre avant ma validation de l'aperçu.
+      </label>
+
+      <button type="submit" class="btn btn-primary btn-block">Envoyer ma demande</button>
+    </form>
+
+    <div class="order-success" id="orderSuccess" hidden>
+      <div class="success-icon">✓</div>
+      <h2>Demande envoyée</h2>
+      <p id="successPaymentNote">Merci ! Notre équipe commence la conception de ta maquette. Dès qu'elle sera validée, tu recevras une demande de paiement de l'avance (4 000 F) via Orange Money — rien n'est débité maintenant.</p>
+      <a href="index.html" class="btn btn-ghost">Retour à l'accueil</a>
+    </div>
+
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo">YourDrip</span>
+      <p>Vêtements personnalisés &amp; infographie sur demande.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h4>Boutique</h4>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="produit.html">Personnaliser</a>
+        <a href="commande.html">Commander</a>
+      </div>
+      <div>
+        <h4>Infos</h4>
+        <a href="index.html#comment-ca-marche">Comment ça marche</a>
+        <a href="admin.html">Espace admin</a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-legal">© 2026 YourDrip. Prototype de démonstration.</p>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/order.js"></script>
+</body>
+</html>

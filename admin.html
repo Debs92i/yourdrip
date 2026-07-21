@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espace admin — YourDrip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-body">
+
+<div class="admin-shell">
+
+  <aside class="admin-sidebar">
+    <a href="index.html" class="logo" aria-label="YourDrip — Accueil">
+      <span class="logo-hanger" aria-hidden="true">⌂</span>
+      YourDrip
+    </a>
+    <nav class="admin-nav">
+      <a href="#" class="is-active">Commandes</a>
+      <a href="#">Produits</a>
+      <a href="#">Clients</a>
+      <a href="#">Paiements</a>
+    </nav>
+    <a href="index.html" class="admin-exit">← Retour au site</a>
+  </aside>
+
+  <main class="admin-main">
+
+    <header class="admin-header">
+      <div>
+        <p class="eyebrow">Espace administrateur</p>
+        <h1>Commandes</h1>
+      </div>
+      <div class="admin-header-actions">
+        <button class="btn btn-ghost">Exporter</button>
+        <button class="btn btn-primary">+ Nouveau produit</button>
+      </div>
+    </header>
+
+    <section class="admin-stats">
+      <div class="stat-card">
+        <span class="stat-label">En attente</span>
+        <span class="stat-value">4</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">En conception</span>
+        <span class="stat-value">6</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">À valider</span>
+        <span class="stat-value">3</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">En production</span>
+        <span class="stat-value">5</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Livrées ce mois</span>
+        <span class="stat-value">21</span>
+      </div>
+    </section>
+
+    <section class="admin-table-section">
+      <div class="admin-table-head">
+        <div class="status-filters" id="statusFilters">
+          <button class="status-chip is-active" data-status="all">Toutes</button>
+          <button class="status-chip" data-status="attente">En attente</button>
+          <button class="status-chip" data-status="conception">En conception</button>
+          <button class="status-chip" data-status="validation">À valider</button>
+          <button class="status-chip" data-status="validee">Validée</button>
+          <button class="status-chip" data-status="production">En production</button>
+          <button class="status-chip" data-status="livree">Livrée</button>
+        </div>
+        <input type="search" class="admin-search" placeholder="Rechercher un client, une commande...">
+      </div>
+
+      <div class="table-wrap">
+        <table class="admin-table" id="ordersTable">
+          <thead>
+            <tr>
+              <th>Commande</th>
+              <th>Client</th>
+              <th>Article</th>
+              <th>Avance</th>
+              <th>Statut</th>
+              <th>Reçu le</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-status="attente">
+              <td class="mono">#YD-1042</td>
+              <td>Awa Ndiaye</td>
+              <td>T-shirt · Image importée</td>
+              <td>Non versée</td>
+              <td><span class="status-badge status-attente">En attente</span></td>
+              <td class="mono">14 juil.</td>
+              <td><button class="row-action">Ouvrir</button></td>
+            </tr>
+            <tr data-status="conception">
+              <td class="mono">#YD-1041</td>
+              <td>Moussa Fall</td>
+              <td>Pull · Motif du site</td>
+              <td>Non versée</td>
+              <td><span class="status-badge status-conception">En conception</span></td>
+              <td class="mono">13 juil.</td>
+              <td><button class="row-action">Ouvrir</button></td>
+            </tr>
+            <tr data-status="validation">
+              <td class="mono">#YD-1040</td>
+              <td>Fatou Diop</td>
+              <td>Casquette · Image importée</td>
+              <td>Non versée</td>
+              <td><span class="status-badge status-validation">À valider</span></td>
+              <td class="mono">12 juil.</td>
+              <td><button class="row-action">Ouvrir</button></td>
+            </tr>
+            <tr data-status="validee">
+              <td class="mono">#YD-1039</td>
+              <td>Cheikh Sarr</td>
+              <td>Bonnet · Couleur unique</td>
+              <td>5 000 F versée</td>
+              <td><span class="status-badge status-validee">Validée</span></td>
+              <td class="mono">11 juil.</td>
+              <td><button class="row-action">Ouvrir</button></td>
+            </tr>
+            <tr data-status="production">
+              <td class="mono">#YD-1038</td>
+              <td>Bineta Cissé</td>
+              <td>T-shirt · Motif du site</td>
+              <td>4 000 F versée</td>
+              <td><span class="status-badge status-production">En production</span></td>
+              <td class="mono">09 juil.</td>
+              <td><button class="row-action">Ouvrir</button></td>
+            </tr>
+            <tr data-status="livree">
+              <td class="mono">#YD-1037</td>
+              <td>Ibrahima Ba</td>
+              <td>Pull · Image importée</td>
+              <td>Soldée</td>
+              <td><span class="status-badge status-livree">Livrée</span></td>
+              <td class="mono">05 juil.</td>
+              <td><button class="row-action">Ouvrir</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

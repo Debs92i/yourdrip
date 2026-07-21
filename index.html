@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script>
+(function(){
+  var t = localStorage.getItem('yourdrip-theme');
+  if(!t){ var h = new Date().getHours(); t = (h >= 7 && h < 19) ? 'light' : 'dark'; }
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YourDrip — Vêtements personnalisés</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="drip-cursor" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="YourDrip — Accueil">
+      <span class="logo-hanger" aria-hidden="true">⌂</span>
+      YourDrip
+    </a>
+    <div class="nav-right">
+    <nav class="nav-links" id="navLinks">
+      <a href="catalogue.html">Catalogue</a>
+      <a href="produit.html">Personnaliser</a>
+      <a href="#comment-ca-marche">Comment ça marche</a>
+      <a href="commande.html" class="nav-cta">Commander</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème" aria-pressed="false">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"></line><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"></line><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"></line></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.354 15.354A9 9 0 0 1 8.646 3.646 9.003 9.003 0 1 0 20.354 15.354z"></path></svg>
+    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Prêt-à-porter &amp; créations sur-mesure</p>
+      <h1 class="hero-title" id="dripTitle">
+        <span class="drip-word">Your</span><span class="drip-word drip-word--accent">Drip</span>
+      </h1>
+      <p class="hero-sub">Un t-shirt, un pull, une casquette, un bonnet — à ton image. Envoie ton visuel, choisis un motif, ou pars d'une pièce déjà stylée. Notre équipe dessine la maquette, tu valides, on produit.</p>
+      <div class="hero-actions">
+        <a href="produit.html" class="btn btn-primary">Créer mon design</a>
+        <a href="catalogue.html" class="btn btn-ghost">Voir le catalogue</a>
+      </div>
+      <div class="hero-tags">
+        <span>Validation avant production</span>
+        <span>Avance de 50%</span>
+        <span>Livraison suivie</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="catalogue-preview" id="catalogue">
+    <div class="section-head">
+      <p class="eyebrow">La sélection</p>
+      <h2>Quatre pièces, une seule idée : la tienne</h2>
+    </div>
+    <div class="product-grid">
+
+      <article class="product-card">
+        <div class="product-art product-art--tee" aria-hidden="true"></div>
+        <div class="product-body">
+          <h3>T-shirt</h3>
+          <p>Prêt à porter ou personnalisé, toutes tailles et couleurs.</p>
+          <div class="product-foot">
+            <span class="price">Dès 8 000 F</span>
+            <span class="tag">Personnalisable</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-art product-art--hoodie" aria-hidden="true"></div>
+        <div class="product-body">
+          <h3>Pull</h3>
+          <p>Coupes standards ou adaptées à ton style.</p>
+          <div class="product-foot">
+            <span class="price">Dès 15 000 F</span>
+            <span class="tag">Personnalisable</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-art product-art--cap" aria-hidden="true"></div>
+        <div class="product-body">
+          <h3>Casquette</h3>
+          <p>Motifs ou image importée, brodés ou imprimés.</p>
+          <div class="product-foot">
+            <span class="price">Dès 6 000 F</span>
+            <span class="tag">Personnalisable</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-art product-art--beanie" aria-hidden="true"></div>
+        <div class="product-body">
+          <h3>Bonnet</h3>
+          <p>Textile personnalisable selon ta demande.</p>
+          <div class="product-foot">
+            <span class="price">Dès 5 000 F</span>
+            <span class="tag">Personnalisable</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="process" id="comment-ca-marche">
+    <div class="section-head">
+      <p class="eyebrow">Le circuit d'une commande</p>
+      <h2>Comment ça marche</h2>
+    </div>
+    <ol class="process-steps">
+      <li>
+        <span class="step-num">01</span>
+        <h3>Tu choisis</h3>
+        <p>Vêtement, couleur, taille — puis un motif du site ou ta propre image.</p>
+      </li>
+      <li>
+        <span class="step-num">02</span>
+        <h3>Tu décris ta demande</h3>
+        <p>Un formulaire simple recueille tes coordonnées et tes instructions.</p>
+      </li>
+      <li>
+        <span class="step-num">03</span>
+        <h3>On dessine la maquette</h3>
+        <p>Notre équipe conçoit ton visuel à la main à partir de ce que tu as fourni.</p>
+      </li>
+      <li>
+        <span class="step-num">04</span>
+        <h3>Tu valides</h3>
+        <p>L'aperçu t'est envoyé. Rien ne part en production sans ton accord.</p>
+      </li>
+      <li>
+        <span class="step-num">05</span>
+        <h3>Production &amp; livraison</h3>
+        <p>Avance de 50% à la validation, solde à la réception de ta commande.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="personalize-teaser">
+    <div class="teaser-inner">
+      <div class="teaser-text">
+        <p class="eyebrow">Sur-mesure</p>
+        <h2>Ton visuel. Ton drip.</h2>
+        <p>Importe une image, choisis parmi nos motifs, ou décris ce que tu as en tête. On s'occupe du reste — de la maquette à la livraison.</p>
+        <a href="produit.html" class="btn btn-primary">Démarrer une personnalisation</a>
+      </div>
+      <div class="teaser-visual" aria-hidden="true">
+        <div class="upload-zone">
+          <div class="upload-icon">↑</div>
+          <p>Glisse ton image ici</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo">YourDrip</span>
+      <p>Vêtements personnalisés &amp; infographie sur demande.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h4>Boutique</h4>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="produit.html">Personnaliser</a>
+        <a href="commande.html">Commander</a>
+      </div>
+      <div>
+        <h4>Infos</h4>
+        <a href="#comment-ca-marche">Comment ça marche</a>
+        <a href="admin.html">Espace admin</a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-legal">© 2026 YourDrip. Prototype de démonstration.</p>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalogue — YourDrip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="YourDrip — Accueil">
+      <span class="logo-hanger" aria-hidden="true">⌂</span>
+      YourDrip
+    </a>
+    <div class="nav-right">
+    <nav class="nav-links" id="navLinks">
+      <a href="catalogue.html">Catalogue</a>
+      <a href="produit.html">Personnaliser</a>
+      <a href="#comment-ca-marche">Comment ça marche</a>
+      <a href="commande.html" class="nav-cta">Commander</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème" aria-pressed="false">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"></line><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"></line><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"></line></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.354 15.354A9 9 0 0 1 8.646 3.646 9.003 9.003 0 1 0 20.354 15.354z"></path></svg>
+    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-head">
+    <p class="eyebrow">Boutique</p>
+    <h1>Le catalogue</h1>
+    <p class="page-sub">Prêt à porter ou personnalisable — tout part d'ici.</p>
+  </section>
+
+  <section class="catalogue-page">
+
+    <div class="filters" role="group" aria-label="Filtrer par catégorie">
+      <button class="filter-chip is-active" data-filter="all">Tout</button>
+      <button class="filter-chip" data-filter="tshirt">T-shirts</button>
+      <button class="filter-chip" data-filter="pull">Pulls</button>
+      <button class="filter-chip" data-filter="casquette">Casquettes</button>
+      <button class="filter-chip" data-filter="bonnet">Bonnets</button>
+    </div>
+
+    <div class="product-grid product-grid--catalogue" id="productGrid">
+
+      <article class="product-card" data-category="tshirt">
+        <a href="produit.html?type=tshirt" class="product-art product-art--tee" aria-label="T-shirt Essentiel"></a>
+        <div class="product-body">
+          <h3>T-shirt Essentiel</h3>
+          <p>Coupe classique, coton lourd, 6 coloris.</p>
+          <div class="product-foot"><span class="price">8 000 F</span><span class="tag">Personnalisable</span></div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="tshirt">
+        <a href="produit.html?type=tshirt-oversize" class="product-art product-art--tee" aria-label="T-shirt Oversize"></a>
+        <div class="product-body">
+          <h3>T-shirt Oversize</h3>
+          <p>Coupe ample, tombé streetwear.</p>
+          <div class="product-foot"><span class="price">9 500 F</span><span class="tag">Personnalisable</span></div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="tshirt">
+        <a href="produit.html?type=tshirt-pret" class="product-art product-art--tee" aria-label="T-shirt collection prête à porter"></a>
+        <div class="product-body">
+          <h3>T-shirt Collection</h3>
+          <p>Déjà designé, prêt à l'achat direct.</p>
+          <div class="product-foot"><span class="price">7 500 F</span><span class="tag tag--ready">Prêt à porter</span></div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="pull">
+        <a href="produit.html?type=pull" class="product-art product-art--hoodie" aria-label="Pull Studio"></a>
+        <div class="product-body">
+          <h3>Pull Studio</h3>
+          <p>Molleton épais, capuche doublée.</p>
+          <div class="product-foot"><span class="price">15 000 F</span><span class="tag">Personnalisable</span></div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="pull">
+        <a href="produit.html?type=pull-crew" class="product-art product-art--hoodie" aria-label="Pull Crewneck"></a>
+        <div class="product-body">
+          <h3>Pull Crewneck</h3>
+          <p>Col rond, coupe droite, unisexe.</p>
+          <div class="product-foot"><span class="price">13 500 F</span><span class="tag">Personnalisable</span></div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="casquette">
+        <a href="produit.html?type=casquette" class="product-art product-art--cap" aria-label="Casquette Snapback"></a>
+        <div class="product-body">
+          <h3>Casquette Snapback</h3>
+          <p>Broderie ou impression, réglable.</p>
+          <div class="product-foot"><span class="price">6 000 F</span><span class="tag">Personnalisable</span></div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="casquette">
+        <a href="produit.html?type=casquette-pret" class="product-art product-art--cap" aria-label="Casquette collection"></a>
+        <div class="product-body">
+          <h3>Casquette Collection</h3>
+          <p>Motif signature YourDrip, prête à l'achat.</p>
+          <div class="product-foot"><span class="price">6 500 F</span><span class="tag tag--ready">Prêt à porter</span></div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="bonnet">
+        <a href="produit.html?type=bonnet" class="product-art product-art--beanie" aria-label="Bonnet Côtelé"></a>
+        <div class="product-body">
+          <h3>Bonnet Côtelé</h3>
+          <p>Tricot serré, patch brodé possible.</p>
+          <div class="product-foot"><span class="price">5 000 F</span><span class="tag">Personnalisable</span></div>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="empty-state" id="emptyState" hidden>Aucune pièce dans cette catégorie pour le moment.</p>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo">YourDrip</span>
+      <p>Vêtements personnalisés &amp; infographie sur demande.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h4>Boutique</h4>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="produit.html">Personnaliser</a>
+        <a href="commande.html">Commander</a>
+      </div>
+      <div>
+        <h4>Infos</h4>
+        <a href="index.html#comment-ca-marche">Comment ça marche</a>
+        <a href="admin.html">Espace admin</a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-legal">© 2026 YourDrip. Prototype de démonstration.</p>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personnaliser — YourDrip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="YourDrip — Accueil">
+      <span class="logo-hanger" aria-hidden="true">⌂</span>
+      YourDrip
+    </a>
+    <div class="nav-right">
+    <nav class="nav-links" id="navLinks">
+      <a href="catalogue.html">Catalogue</a>
+      <a href="produit.html">Personnaliser</a>
+      <a href="#comment-ca-marche">Comment ça marche</a>
+      <a href="commande.html" class="nav-cta">Commander</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème" aria-pressed="false">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"></line><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"></line><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"></line></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.354 15.354A9 9 0 0 1 8.646 3.646 9.003 9.003 0 1 0 20.354 15.354z"></path></svg>
+    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-head">
+    <p class="eyebrow">Étape 1 sur 2</p>
+    <h1>Construis ta pièce</h1>
+    <p class="page-sub">Choisis le vêtement, la couleur, la taille, puis le visuel. Le prix s'ajuste en direct.</p>
+  </section>
+
+  <section class="customizer">
+
+    <div class="customizer-preview">
+      <div class="preview-stage" id="previewStage">
+        <div class="preview-garment" id="previewGarment" data-type="tshirt"></div>
+        <div class="preview-overlay" id="previewOverlay" hidden></div>
+      </div>
+      <p class="preview-caption">Aperçu indicatif — la maquette réelle est dessinée par notre équipe après ta demande.</p>
+    </div>
+
+    <form class="customizer-form" id="customizerForm">
+
+      <div class="field-group">
+        <label class="field-label">Vêtement</label>
+        <div class="option-row" id="garmentOptions">
+          <button type="button" class="option-btn is-active" data-garment="tshirt">T-shirt</button>
+          <button type="button" class="option-btn" data-garment="pull">Pull</button>
+          <button type="button" class="option-btn" data-garment="casquette">Casquette</button>
+          <button type="button" class="option-btn" data-garment="bonnet">Bonnet</button>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Couleur</label>
+        <div class="swatch-row" id="colorOptions">
+          <button type="button" class="swatch is-active" style="--sw:#0D0A16" data-color="#0D0A16" aria-label="Noir violine"></button>
+          <button type="button" class="swatch" style="--sw:#F7F5FA" data-color="#F7F5FA" aria-label="Blanc"></button>
+          <button type="button" class="swatch" style="--sw:#7C2AE8" data-color="#7C2AE8" aria-label="Violet"></button>
+          <button type="button" class="swatch" style="--sw:#3B0F70" data-color="#3B0F70" aria-label="Violet profond"></button>
+          <button type="button" class="swatch" style="--sw:#B98CFF" data-color="#B98CFF" aria-label="Lavande"></button>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Taille</label>
+        <div class="option-row" id="sizeOptions">
+          <button type="button" class="option-btn size-btn" data-size="S">S</button>
+          <button type="button" class="option-btn size-btn is-active" data-size="M">M</button>
+          <button type="button" class="option-btn size-btn" data-size="L">L</button>
+          <button type="button" class="option-btn size-btn" data-size="XL">XL</button>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Type de commande</label>
+        <div class="tab-row" id="orderTypeTabs">
+          <button type="button" class="tab-btn is-active" data-tab="pret">Prêt à porter</button>
+          <button type="button" class="tab-btn" data-tab="uni">Couleur unique</button>
+          <button type="button" class="tab-btn" data-tab="motif">Motif du site</button>
+          <button type="button" class="tab-btn" data-tab="upload">Mon image</button>
+        </div>
+
+        <div class="tab-panel" data-panel="pret">
+          <p class="tab-note">Pièce déjà finalisée — disponible à l'achat direct, sans étape de conception.</p>
+        </div>
+
+        <div class="tab-panel" data-panel="uni" hidden>
+          <p class="tab-note">Vêtement uni dans la couleur choisie ci-dessus, sans modification graphique.</p>
+        </div>
+
+        <div class="tab-panel" data-panel="motif" hidden>
+          <p class="tab-note">Sélectionne un motif proposé par YourDrip.</p>
+          <div class="motif-grid" id="motifGrid">
+            <button type="button" class="motif-swatch" data-motif="1" style="background: repeating-linear-gradient(45deg, #7C2AE8, #7C2AE8 6px, #3B0F70 6px, #3B0F70 12px)"></button>
+            <button type="button" class="motif-swatch" data-motif="2" style="background: radial-gradient(circle at 30% 30%, #B98CFF, #3B0F70 70%)"></button>
+            <button type="button" class="motif-swatch" data-motif="3" style="background: repeating-linear-gradient(90deg, #F7F5FA, #F7F5FA 4px, #7C2AE8 4px, #7C2AE8 8px)"></button>
+            <button type="button" class="motif-swatch" data-motif="4" style="background: linear-gradient(135deg, #7C2AE8, #B98CFF)"></button>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="upload" hidden>
+          <p class="tab-note">Importe ton visuel (JPG, PNG — 10 Mo max).</p>
+          <label class="upload-zone upload-zone--interactive" for="fileInput">
+            <div class="upload-icon">↑</div>
+            <p id="uploadLabel">Glisse ton image ici ou clique pour parcourir</p>
+            <input type="file" id="fileInput" accept="image/*" hidden>
+          </label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="instructions">Description &amp; instructions</label>
+        <textarea id="instructions" rows="3" placeholder="Ex : logo côté gauche de la poitrine, texte « YourDrip » en dessous..."></textarea>
+      </div>
+
+      <div class="customizer-summary">
+        <span class="price-live" id="priceLive">8 000 F</span>
+        <a href="commande.html" class="btn btn-primary">Continuer vers la commande</a>
+      </div>
+
+    </form>
+
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo">YourDrip</span>
+      <p>Vêtements personnalisés &amp; infographie sur demande.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h4>Boutique</h4>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="produit.html">Personnaliser</a>
+        <a href="commande.html">Commander</a>
+      </div>
+      <div>
+        <h4>Infos</h4>
+        <a href="index.html#comment-ca-marche">Comment ça marche</a>
+        <a href="admin.html">Espace admin</a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-legal">© 2026 YourDrip. Prototype de démonstration.</p>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>
